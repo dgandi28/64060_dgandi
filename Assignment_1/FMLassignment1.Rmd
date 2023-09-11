@@ -1,0 +1,70 @@
+---
+title: "BA 64060 assignment1"
+output:
+  word_document: default
+  html_document: default
+  pdf_document: default
+date: "2023-09-08"
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+
+```
+
+# Download Reference
+The  data set have been downloaded from kaggle
+https://www.kaggle.com/datasets/nelgiriyewithana/global-youtube-statistics-2023
+
+
+#load the dataset
+In order to import the dataset in RStudio, I used the read.csv function.
+
+```{r}
+data = read.csv("C:/Users/gdurg/Downloads/Global_YouTube_Statistics.csv",header = TRUE, sep = ",")
+
+data = na.omit(data)
+
+head(data, 10)
+```
+
+## Descriptive Statistics
+
+```{r}
+summary(data)
+```
+##Further we need to check quantative data-- mean,median,min,max 
+
+```{r}
+mean(data$uploads)
+median(data$uploads)
+min(data$uploads)
+max(data$uploads)
+
+```
+
+## Transformation
+```{r}
+log = log(data$video_views_rank)
+head(log)
+```
+
+## Plot
+
+```{r}
+
+plot(table(data$channel_type), type="o", col='pink',main="line Graph") 
+
+
+```
+```{r}
+plot(x = data$uploads , y = data$video_views_rank,
+     xlab = "UPLOADS",
+     ylab = "VEDIO_VIEWS_RANK",
+     xlim = c(0,1000),
+     ylim = c(0,1000),
+     main = "Youtube_stats"
+  
+)
+
+```
