@@ -364,8 +364,26 @@ display: none;
 <ol style="list-style-type: decimal">
 <li><p>How would this customer be classified? This new customer would be
 classified as 0, does not take the personal loan?</p></li>
-<li><p>The best K is 3.</p></li>
+<li><p>The best K .</p></li>
 </ol>
+<div id="answers" class="section level3">
+<h3>Answers</h3>
+<p>1:0</p>
+<p>2:k=3</p>
+<p>3:<strong><em>Confusion matrix for validation set:</em></strong></p>
+<pre><code>     Reference</code></pre>
+<p>Prediction 0 1 0 1786 63 1 9 142</p>
+<p>4:0</p>
+<p><strong><em>5:Confusion matrix for training set:</em></strong></p>
+<pre><code>      Reference</code></pre>
+<p>Prediction 0 1 0 2263 54 1 5 178</p>
+<p><strong><em>Confusion matrix for validation set:</em></strong></p>
+<pre><code>        Reference</code></pre>
+<p>Prediction 0 1 0 1358 42 1 6 94</p>
+<p><strong><em>Confusion Matrix for testing set:</em></strong></p>
+<pre><code>      Reference</code></pre>
+<p>Prediction 0 1 0 884 35 1 4 77</p>
+</div>
 </div>
 <div id="problem" class="section level2">
 <h2>Problem</h2>
@@ -424,7 +442,7 @@ dim(universal.dm)</code></pre>
 <div id="drop-id-and-zip" class="section level2">
 <h2>Drop ID and ZIP</h2>
 <pre class="r"><code>universal.dm &lt;- universal.dm[,-c(1,5)]</code></pre>
-<p><strong><em>Now split Data to 60% training and 40% validation.And
+<p><strong><em>Split the Data to 60% training and 40% validation.And
 then transform categorical variables into dummy
 variables</em></strong></p>
 <pre class="r"><code>universal.dm$Education &lt;- as.factor(universal.dm$Education)
