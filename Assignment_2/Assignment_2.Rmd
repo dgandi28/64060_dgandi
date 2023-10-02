@@ -3,61 +3,59 @@ title: "64060_Assignment2"
 author: "Durgaprasad Gandi"
 date: "2023-09-29"
 output:
-  html_document: default
   pdf_document: default
+  html_document: default
   word_document: default
 ---
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
 ```
+#Summary
+#Questions - Answers
 
+1. 1. Age = 40, Experience = 10, Income = 84, Family = 2, CCAvg = 2, Education_1 = 0, Education_2 = 1, Education_3 = 0, Mortgage = 0, Securities Account = 0, CD Account = 0, Online = 1, and Credit Card = 1. Perform a k-NN classification with all predictors except ID and ZIP code using k = 1. Remember to transform categorical predictors with more than two categories into dummy variables first. Specify the success class as 1 (loan acceptance), and use the default cutoff value of 0.5. How would this customer be classified?
 
-# Summary
+Answer :0
 
-## Questions - Answers
+2.What is a choice of k that balances between overfitting and ignoring the predictor information?
 
-1. How would this customer be classified? This new customer would be classified as 0, does not take the personal loan?
+ Answer : k=3
 
-2. The best K .
+3.Show the confusion matrix for the validation data that results from using the best k.
 
-### Answers
-1:0
-
-2:k=3
-
-3:***Confusion matrix for validation set:***
-
-         Reference
+ Answer :        Reference
 Prediction    0    1
          0 1786   63
          1    9  142
          
-4:0
+4.Consider the following customer: Age = 40, Experience = 10, Income = 84,
+Family = 2, CCAvg = 2, Education_1 = 0, Education_2 = 1, Education_3 = 0,
+Mortgage = 0, Securities Account = 0, CD Account = 0, Online = 1 and Credit Card = 1. Classify the customer using the best k.
+
+Answer : 0
 
 
-***5:Confusion matrix for training set:***
+5. Repartition the data, this time into training, validation, and test sets (50% : 30% : 20%). Apply the k-NN method with the k chosen above. Compare the confusion matrix of the test set with that of the training and validation sets. Comment on the differences and their reason.
 
-          Reference
-Prediction    0    1
-         0 2263   54
-         1    5  178
-         
-***Confusion matrix for validation set:***
+Answer:      
 
-            Reference
-Prediction    0    1
-         0 1358   42
-         1    6   94
-         
-         
-***Confusion Matrix for testing set:***
+### Differences and their reasons:
+***By comparing the above Confusion matrix for the validation and training with test set:***
 
-          Reference
-Prediction   0   1
-         0 884  35
-         1   4  77
+***1.Accuracy :*** Accuracy for the Validation set is 0.968 and for training set  is 0.9764 which are bit more than accuracy of  test set 0.961.
+  
 
+***2.Sensitivity:*** Sensitivity in the validation set is 0.7672  is slightly more than Training set 0.69118 which amounts to 7% approximately .Interestingly Validation's sensitivity has far more than test set sensitivity accounting for 0.6875.
+
+***3.Precision :*** Precision in the validation set is 0.94000,test set is  0.9506 So,training set has the greater precision  0.9727 than remaining sets. 
+
+***4.Specificity:*** Specificity of Training,validation,Test set are 0.9978>0.99560>0.9955.
+
+### Reason
+
+The reason in differences for the datset is because the Sizes of dataset are different for each sets.
+Some of misclassification also happens in datasets and performance aslo the causes for the differences in datasets.
 
 ## Problem
 
@@ -179,8 +177,7 @@ knn.pred1
 
 ***
 
-2. What is a choice of k that balances between overfitting and ignoring the predictor
-information?
+2. What is a choice of k that balances between overfitting and ignoring the predictor information?
 
 
 ```{r}
@@ -221,10 +218,7 @@ confusion_matrix
 
 
 
-4. Consider the following customer: Age = 40, Experience = 10, Income = 84,
-Family = 2, CCAvg = 2, Education_1 = 0, Education_2 = 1, Education_3 = 0,
-Mortgage = 0, Securities Account = 0, CD Account = 0, Online = 1 and Credit
-Card = 1. Classify the customer using the best k.
+4. Consider the following customer: Age = 40, Experience = 10, Income = 84,Family = 2, CCAvg = 2, Education_1 = 0, Education_2 = 1, Education_3 = 0,Mortgage = 0, Securities Account = 0, CD Account = 0, Online = 1 and Credit Card = 1. Classify the customer using the best k.
 
 
 ```{r}

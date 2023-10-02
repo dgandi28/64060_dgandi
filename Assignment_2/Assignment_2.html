@@ -357,33 +357,63 @@ display: none;
 </div>
 
 
-<div id="summary" class="section level1">
-<h1>Summary</h1>
-<div id="questions---answers" class="section level2">
-<h2>Questions - Answers</h2>
+<p>#Summary #Questions - Answers</p>
 <ol style="list-style-type: decimal">
-<li><p>How would this customer be classified? This new customer would be
-classified as 0, does not take the personal loan?</p></li>
-<li><p>The best K .</p></li>
+<li><ol style="list-style-type: decimal">
+<li>Age = 40, Experience = 10, Income = 84, Family = 2, CCAvg = 2,
+Education_1 = 0, Education_2 = 1, Education_3 = 0, Mortgage = 0,
+Securities Account = 0, CD Account = 0, Online = 1, and Credit Card = 1.
+Perform a k-NN classification with all predictors except ID and ZIP code
+using k = 1. Remember to transform categorical predictors with more than
+two categories into dummy variables first. Specify the success class as
+1 (loan acceptance), and use the default cutoff value of 0.5. How would
+this customer be classified?</li>
+</ol></li>
 </ol>
-<div id="answers" class="section level3">
-<h3>Answers</h3>
-<p>1:0</p>
-<p>2:k=3</p>
-<p>3:<strong><em>Confusion matrix for validation set:</em></strong></p>
-<pre><code>     Reference</code></pre>
-<p>Prediction 0 1 0 1786 63 1 9 142</p>
-<p>4:0</p>
-<p><strong><em>5:Confusion matrix for training set:</em></strong></p>
-<pre><code>      Reference</code></pre>
-<p>Prediction 0 1 0 2263 54 1 5 178</p>
-<p><strong><em>Confusion matrix for validation set:</em></strong></p>
-<pre><code>        Reference</code></pre>
-<p>Prediction 0 1 0 1358 42 1 6 94</p>
-<p><strong><em>Confusion Matrix for testing set:</em></strong></p>
-<pre><code>      Reference</code></pre>
-<p>Prediction 0 1 0 884 35 1 4 77</p>
+<p>Answer :0</p>
+<p>2.What is a choice of k that balances between overfitting and
+ignoring the predictor information?</p>
+<p>Answer : k=3</p>
+<p>3.Show the confusion matrix for the validation data that results from
+using the best k.</p>
+<p>Answer : Reference Prediction 0 1 0 1786 63 1 9 142</p>
+<p>4.Consider the following customer: Age = 40, Experience = 10, Income
+= 84, Family = 2, CCAvg = 2, Education_1 = 0, Education_2 = 1,
+Education_3 = 0, Mortgage = 0, Securities Account = 0, CD Account = 0,
+Online = 1 and Credit Card = 1. Classify the customer using the best
+k.</p>
+<p>Answer : 0</p>
+<ol start="5" style="list-style-type: decimal">
+<li>Repartition the data, this time into training, validation, and test
+sets (50% : 30% : 20%). Apply the k-NN method with the k chosen above.
+Compare the confusion matrix of the test set with that of the training
+and validation sets. Comment on the differences and their reason.</li>
+</ol>
+<p>Answer:</p>
+<div id="differences-and-their-reasons" class="section level3">
+<h3>Differences and their reasons:</h3>
+<p><strong><em>By comparing the above Confusion matrix for the
+validation and training with test set:</em></strong></p>
+<p><strong><em>1.Accuracy :</em></strong> Accuracy for the Validation
+set is 0.968 and for training set is 0.9764 which are bit more than
+accuracy of test set 0.961.</p>
+<p><strong><em>2.Sensitivity:</em></strong> Sensitivity in the
+validation set is 0.7672 is slightly more than Training set 0.69118
+which amounts to 7% approximately .Interestingly Validation’s
+sensitivity has far more than test set sensitivity accounting for
+0.6875.</p>
+<p><strong><em>3.Precision :</em></strong> Precision in the validation
+set is 0.94000,test set is 0.9506 So,training set has the greater
+precision 0.9727 than remaining sets.</p>
+<p><strong><em>4.Specificity:</em></strong> Specificity of
+Training,validation,Test set are 0.9978&gt;0.99560&gt;0.9955.</p>
 </div>
+<div id="reason" class="section level3">
+<h3>Reason</h3>
+<p>The reason in differences for the datset is because the Sizes of
+dataset are different for each sets. Some of misclassification also
+happens in datasets and performance aslo the causes for the differences
+in datasets.</p>
 </div>
 <div id="problem" class="section level2">
 <h2>Problem</h2>
@@ -599,9 +629,9 @@ confusion_matrix</code></pre>
 ## </code></pre>
 <ol start="4" style="list-style-type: decimal">
 <li>Consider the following customer: Age = 40, Experience = 10, Income =
-84, Family = 2, CCAvg = 2, Education_1 = 0, Education_2 = 1, Education_3
-= 0, Mortgage = 0, Securities Account = 0, CD Account = 0, Online = 1
-and Credit Card = 1. Classify the customer using the best k.</li>
+84,Family = 2, CCAvg = 2, Education_1 = 0, Education_2 = 1, Education_3
+= 0,Mortgage = 0, Securities Account = 0, CD Account = 0, Online = 1 and
+Credit Card = 1. Classify the customer using the best k.</li>
 </ol>
 <pre class="r"><code># To find the customer having best k value.
 knn.pred2 &lt;- class::knn(train = train.norm.dm,
@@ -761,7 +791,7 @@ testing_confusion_matrix</code></pre>
 ##        &#39;Positive&#39; Class : 1               
 ## </code></pre>
 </div>
-<div id="differences-and-their-reasons" class="section level3">
+<div id="differences-and-their-reasons-1" class="section level3">
 <h3>Differences and their reasons:</h3>
 <p><strong><em>By comparing the above Confusion matrix for the
 validation and training with test set:</em></strong></p>
@@ -779,13 +809,12 @@ precision 0.9727 than remaining sets.</p>
 <p><strong><em>4.Specificity:</em></strong> Specificity of
 Training,validation,Test set are 0.9978&gt;0.99560&gt;0.9955.</p>
 </div>
-<div id="reason" class="section level3">
+<div id="reason-1" class="section level3">
 <h3>Reason</h3>
 <p>The reason in differences for the datset is because the Sizes of
 dataset are different for each sets. Some of misclassification also
 happens in datasets and performance aslo the causes for the differences
 in datasets.</p>
-</div>
 </div>
 </div>
 
