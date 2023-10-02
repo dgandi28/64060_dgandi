@@ -58,6 +58,8 @@ Answer:
 The reason in differences for the datset is because the Sizes of dataset are different for each sets.
 Some of misclassification also happens in datasets and performance aslo the causes for the differences in datasets.
 
+Data variability : The validation set might be more representative of the training set than the test set. if the validation set is more similar in terms of data distribution to the training set the model might perform better on it.
+
 ## Problem
 
 Universal bank is a young bank growing rapidly in terms of overall customer acquisition.
