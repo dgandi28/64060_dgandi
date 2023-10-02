@@ -357,7 +357,11 @@ display: none;
 </div>
 
 
-<p>#Summary #Questions - Answers</p>
+<div id="summary" class="section level1">
+<h1>Summary</h1>
+</div>
+<div id="questions---answers" class="section level1">
+<h1>Questions - Answers</h1>
 <ol style="list-style-type: decimal">
 <li><ol style="list-style-type: decimal">
 <li>Age = 40, Experience = 10, Income = 84, Family = 2, CCAvg = 2,
@@ -370,19 +374,24 @@ two categories into dummy variables first. Specify the success class as
 this customer be classified?</li>
 </ol></li>
 </ol>
-<p>Answer :0</p>
+<p>Answer :0 Loan Rejected</p>
 <p>2.What is a choice of k that balances between overfitting and
 ignoring the predictor information?</p>
 <p>Answer : k=3</p>
 <p>3.Show the confusion matrix for the validation data that results from
 using the best k.</p>
-<p>Answer : Reference Prediction 0 1 0 1786 63 1 9 142</p>
+<p>Answer:</p>
+<pre class="r"><code>matrix(c(1786,63,9,142), ncol = 2 , byrow = TRUE, dimnames = list(prediction=c(0,1), Reference = c(0,1)))</code></pre>
+<pre><code>##           Reference
+## prediction    0   1
+##          0 1786  63
+##          1    9 142</code></pre>
 <p>4.Consider the following customer: Age = 40, Experience = 10, Income
 = 84, Family = 2, CCAvg = 2, Education_1 = 0, Education_2 = 1,
 Education_3 = 0, Mortgage = 0, Securities Account = 0, CD Account = 0,
 Online = 1 and Credit Card = 1. Classify the customer using the best
 k.</p>
-<p>Answer : 0</p>
+<p>Answer : 0 loan Rejected</p>
 <ol start="5" style="list-style-type: decimal">
 <li>Repartition the data, this time into training, validation, and test
 sets (50% : 30% : 20%). Apply the k-NN method with the k chosen above.
@@ -815,6 +824,7 @@ Training,validation,Test set are 0.9978&gt;0.99560&gt;0.9955.</p>
 dataset are different for each sets. Some of misclassification also
 happens in datasets and performance aslo the causes for the differences
 in datasets.</p>
+</div>
 </div>
 </div>
 
