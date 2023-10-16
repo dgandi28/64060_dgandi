@@ -3,9 +3,9 @@ title: "BA_64060_Assignment3"
 author: "Durga Prasad Gandi"
 date: "2023-10-14"
 output:
-  pdf_document: default
-  html_document: default
   word_document: default
+  html_document: default
+  pdf_document: default
 ---
 
 ```{r setup, include=FALSE}
@@ -121,18 +121,18 @@ classification_results <- character(24)
 
 # Assign classifications based on the probabilities and a cutoff of 0.5
 for (i in 1:24) {
-    if (accidents24$WEATHER_R[i] == "1") {
-        if (accidents24$TRAF_CON_R[i] == "0") {
+    if (accidentset24$WEATHER_R[i] == "1") {
+        if (accidentset24$TRAF_CON_R[i] == "0") {
             classification_results[i] = ifelse(p1 > 0.5, "Yes", "No")
-        } else if (accidents24$TRAF_CON_R[i] == "1") {
+        } else if (accidentset24$TRAF_CON_R[i] == "1") {
             classification_results[i] = ifelse(p3 > 0.5, "Yes", "No")
         } else {
             classification_results[i] = ifelse(p5 > 0.5, "Yes", "No")
         }
     } else {
-        if (accidents24$TRAF_CON_R[i] == "0") {
+        if (accidentset24$TRAF_CON_R[i] == "0") {
             classification_results[i] = ifelse(p2 > 0.5, "Yes", "No")
-        } else if (accidents24$TRAF_CON_R[i] == "1") {
+        } else if (accidentset24$TRAF_CON_R[i] == "1") {
             classification_results[i] = ifelse(p4 > 0.5, "Yes", "No")
         } else {
             classification_results[i] = ifelse(p6 > 0.5, "Yes", "No")
