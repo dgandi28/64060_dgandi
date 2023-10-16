@@ -3,8 +3,8 @@ title: "BA_64060_Assignment3"
 author: "Durga Prasad Gandi"
 date: "2023-10-14"
 output:
-  word_document: default
   html_document: default
+  word_document: default
   pdf_document: default
 ---
 
