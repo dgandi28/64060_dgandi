@@ -3,8 +3,8 @@ title: "BA64060_Assignment4"
 author: "Durga Prasad Gandi"
 date: "2023-11-10"
 output:
-  pdf_document: default
   html_document: default
+  pdf_document: default
 ---
 
 ```{r setup, include=FALSE}
@@ -110,12 +110,11 @@ fviz_nbclust(pharmaceutical2, kmeans, method = "wss")
 
 
 ```{r}
-set.seed(35)
+set.seed(1)
 k51 = kcca(pharmaceutical2, k=5, kccaFamily("kmedians"))
 k51
 ```
 
-**set.seed is used to get the same cluster for same code if we run and k medians is used to determine median rather than means ,here Cluster 4 is the largest, with 7 observations, followed by Cluster 5 with 6observations.Cluster 2 is the smallest, with only 1 observation.**
 
 ```{r}
 clusters_index <- predict(k51)
@@ -173,47 +172,46 @@ plot gives us insights into how the distribution of exchanges changes with in cl
 
 
 # Summary
-1)
+**1)Intrepetation:**
 
 Reason for Choosing Market_Cap, Beta, PE_Ratio, ROE, ROA, Asset_Turnover, Leverage, Rev_Growth, and Net_Profit_Margin
 The selected variables Market_Cap, Beta, PE_Ratio, ROE, ROA, Asset_Turnover, Leverage, Rev_Growth, and Net_Profit_Margin are common financial metrics used to evaluate and compare the performance of companies. These variables collectively provide a comprehensive overview of a firm's financial health, profitability, and efficiency.
 
 K-means has been selected over DBSCAN because, K-means is often used in exploratory data analysis to identify patterns and groupings within the data, K-means clustering can provide insights into the financial profiles of pharmaceutical firms. It may reveal groups of firms with similar financial characteristics, aiding in strategic decision-making or investment analysis, easy to interpret, and DBSCAN is effective for datasets with dense regions.
 
-**Market_Cap:**
+Market_Cap:
 Range will be from 0.41 to 199.47.
 Indicates the overall size and valuation of the pharmaceutical firms.
 
-**2. 
-Beta:**
+Beta:
 Ranges from 0.18 to 1.11.
 Measures the sensitivity of a firm's returns to market fluctuations.
 
-**3. PE_Ratio:**
+PE_Ratio:
 Ranges from 3.6 to 82.5.
 Represents the valuation of a firm's stock relative to its earnings.
 
-**4. ROE:**
+ROE:
 Ranges from 3.9 to 62.9.
 Indicates how effectively a firm utilizes shareholder equity to generate profit.
 
-**5. ROA:**
+ROA:
 Ranges from 0.3 to 1.1.
 Measures a firm's ability to generate profit from its assets.
 
-**6. Asset_Turnover:**
+Asset_Turnover:
 Ranges from 0.5 to 1.1.
 Represents how efficiently a firm utilizes its assets to generate revenue.
 
-**7. Leverage:**
+Leverage:
 Ranges from 0 to 3.51.
 Reflects the extent to which a firm uses debt to finance its operations.
 
-**8. Rev_Growth:**
+Rev_Growth:
 Ranges from -3.17 to 34.21.
 Indicates the percentage change in revenue over a specific period.
 
-**9.Net_Profit_Margin:**
+Net_Profit_Margin:
 Ranges from 2.6 to 25.54.
 Represents the percentage of revenue that turns into profit.
 
@@ -231,6 +229,7 @@ Cluster 3:
 Cluster 3 Median Recommendation is very strong hold and high moderate sell
 and  also clear that it has three locations, US has more numbers, next UK and Switzerland
 NYSE which is very high in number in case of Exchange rate for the Cluster 3 
+
 Cluster 4:
 
 Cluster 4 has Median Recommendation which is strong hold and low buy.
@@ -241,7 +240,7 @@ Cluster 5:
 
 Median Recommendation for Cluster 5 has high hold and high buy.It also has two locations in which US is in significantly high compared to UK which is too less and only one exchange that is NYSE.
 
-*3)appropriate name for each cluster:*
+**3)appropriate name for each cluster:**
 
 For Cluster 1 it can be named as Profitable Ventures
 
