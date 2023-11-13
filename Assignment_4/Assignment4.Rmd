@@ -3,8 +3,8 @@ title: "BA64060_Assignment4"
 author: "Durga Prasad Gandi"
 date: "2023-11-10"
 output:
-  html_document: default
   pdf_document: default
+  html_document: default
 ---
 
 ```{r setup, include=FALSE}
@@ -41,7 +41,7 @@ pharmaceutical1 = pharmaceutical[3:11]
 head(pharmaceutical1)
 ```
 
-First entity has the highest market cap at 68.44, while 3rd has the lowest at 6.30.With a beta of 1.11, entity 6 has the highest volatility when compared to the market.**
+First entity has the highest market cap at 68.44, while 3rd has the lowest at 6.30.With a beta of 1.11, entity 6 has the highest volatility when compared to the market.
 With a PE ratio of 82.5, Entity 2 has the highest, indicating a rather expensive valuation.The PE ratio, which shows how much investors are ready to pay for each dollar of earnings, is calculated by dividing the company's stock price by its earnings per share.With the lowest asset turnover (0.6), Entity 5 may be using its assets less effectively to drive sales.
 With a leverage ratio of 0.60, Entity 2 has the highest level of debt in its capital structure.
 Leverage quantifies how much debt a business uses to fund its operations.
@@ -165,15 +165,10 @@ We can observe that only cluster3 has most of the recommendations,Strong buy cou
 ggplot(pharmaceutical3, mapping = aes(factor(Clusters),fill =
 Exchange))+geom_bar(position = 'dodge')+labs(x ='Clusters')
 ```
-
-
-
-
 The resulting plot is a grouped bar plot where each cluster (Clusters) is represented on the x-axis as a separate group, and the bars within each group are colored based on the Exchange variable.
 Overall comparing from chart Cluster 3 has highest exchange count,where as 1 and 5 has same cluster.
 Cluster4 has all types of exchange rates but of smaller count
 Cluster2 has more count than cluster4 but less than the remaining exchanges types.
-Each bar graph represents the frequency or count of observations comes under into a specific combination of cluster and exchange.It helps in visualizing the distribution of observations across different clusters and exchanges. Plot above we can say that they are  useful when you want to compare the distribution of a categorical variable (Exchange) across different levels of another categorical variable (Clusters).
 plot gives us insights into how the distribution of exchanges changes with in clusters.
 
 
